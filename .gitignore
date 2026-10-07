@@ -1,0 +1,7 @@
+qdrant_data/
+.venv/
+__pycache__/
+*.pyc
+.env
+models/
+.DS_Store
