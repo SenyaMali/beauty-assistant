@@ -170,7 +170,7 @@ def check_answer(answer: str, allowed_prices: set[int], allowed_actives: set[str
 
 def build_graph(llm=None):
     """llm можно подменить — так граф тестируется без Ollama."""
-    llm = llm or ChatOllama(model=MODEL, temperature=0)
+    llm = llm or ChatOllama(model=MODEL, temperature=0, base_url=os.getenv("OLLAMA_URL", "http://127.0.0.1:11434"))
     llm_with_tools = llm.bind_tools(TOOLS)
 
     def assistant(state: MessagesState) -> dict:
